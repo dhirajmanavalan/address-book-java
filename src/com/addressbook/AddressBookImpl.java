@@ -32,4 +32,17 @@ public class AddressBookImpl implements AddressBook {
         }
         return false; // not found
     }
+
+    @Override
+    public boolean deleteContactByName(String firstName, String lastName) {
+        for (int i = 0; i < contacts.size(); i++) {
+            ContactPerson current = contacts.get(i);
+            if (current.getFirstName().equalsIgnoreCase(firstName)
+                    && current.getLastName().equalsIgnoreCase(lastName)) {
+                contacts.remove(i);          // remove from list
+                return true;                 // deleted
+            }
+        }
+        return false;                        // not found
+    }
 }
