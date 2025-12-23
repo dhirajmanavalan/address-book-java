@@ -7,4 +7,6 @@ public interface AddressBook {
     void addContact(ContactPerson contact);
 
     List<ContactPerson> getAllContacts();
+
+    boolean editContactByName(String firstName, String lastName, ContactPerson updatedContact);
 }
