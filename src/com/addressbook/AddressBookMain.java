@@ -14,7 +14,8 @@ public class AddressBookMain {
             System.out.println("\n=== Address Book Menu ===");
             System.out.println("1. Create contact");
             System.out.println("3. Edit contact");
-            System.out.println("4. Exit");
+            System.out.println("4. Delete contact");
+            System.out.println("5. Exit");
             System.out.print("Enter choice (1-4): ");
 
             String choice = scanner.nextLine();
@@ -42,7 +43,20 @@ public class AddressBookMain {
                 } else {
                     System.out.println("Contact not found.");
                 }
-            } else if ("4".equals(choice)) {
+            }
+            else if ("4".equals(choice)) {
+                // === UC-4 delete by name ===
+                System.out.print("Enter FIRST NAME of contact to delete: ");
+                String searchFirstName = scanner.nextLine();
+                System.out.print("Enter LAST NAME of contact to delete: ");
+                String searchLastName = scanner.nextLine();
+
+                boolean deleted = addressBook.deleteContactByName(
+                        searchFirstName, searchLastName
+                );
+                System.out.println(deleted ? "Contact deleted." : "Contact not found.");
+            }
+            else if ("5".equals(choice)) {
                 running = false;        // EXIT
             } else {
                 System.out.println("Invalid choice. Try again.");
