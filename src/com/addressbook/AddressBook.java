@@ -9,4 +9,6 @@ public interface AddressBook {
     List<ContactPerson> getAllContacts();
 
     boolean editContactByName(String firstName, String lastName, ContactPerson updatedContact);
+
+    boolean deleteContactByName(String firstName, String lastName);
 }
