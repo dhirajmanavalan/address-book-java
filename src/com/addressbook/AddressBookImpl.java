@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AddressBookImpl implements AddressBook {
 
-    private List<ContactPerson> contacts;
+    private List<ContactPerson> contacts = new ArrayList<>();
 
     public AddressBookImpl() {
         this.contacts = new ArrayList<>();
